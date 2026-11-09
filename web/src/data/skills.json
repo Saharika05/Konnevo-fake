@@ -1,0 +1,115 @@
+{
+  "note": "Edit this one file to change the skills and interests lists. Users can also type their own.",
+  "skills": [
+    {
+      "group": "Programming languages",
+      "items": [
+        "Python",
+        "Java",
+        "JavaScript",
+        "TypeScript",
+        "C",
+        "C++",
+        "C#",
+        "Go",
+        "Rust",
+        "SQL",
+        "Kotlin",
+        "Swift",
+        "R",
+        "PHP"
+      ]
+    },
+    {
+      "group": "Web development",
+      "items": [
+        "HTML/CSS",
+        "React",
+        "Next.js",
+        "Node.js",
+        "Express",
+        "Angular",
+        "Vue",
+        "Django",
+        "Flask",
+        "FastAPI",
+        "REST APIs"
+      ]
+    },
+    {
+      "group": "Mobile",
+      "items": ["Flutter", "React Native", "Android", "iOS (Swift)"]
+    },
+    {
+      "group": "Data and AI",
+      "items": [
+        "Machine Learning",
+        "Deep Learning",
+        "NLP",
+        "Computer Vision",
+        "Data Analysis",
+        "Data Visualization",
+        "Pandas",
+        "NumPy",
+        "TensorFlow",
+        "PyTorch",
+        "Power BI"
+      ]
+    },
+    {
+      "group": "Databases",
+      "items": ["PostgreSQL", "MySQL", "MongoDB", "Firebase", "Redis"]
+    },
+    {
+      "group": "Cloud and tools",
+      "items": ["Git", "GitHub", "Docker", "Kubernetes", "AWS", "Azure", "Google Cloud", "Linux", "CI/CD"]
+    },
+    {
+      "group": "Design and product",
+      "items": [
+        "UI/UX",
+        "Figma",
+        "Graphic design",
+        "Product management",
+        "Public speaking",
+        "Technical writing",
+        "Video editing"
+      ]
+    },
+    {
+      "group": "Other tech",
+      "items": [
+        "Cybersecurity",
+        "Blockchain",
+        "IoT",
+        "Embedded systems",
+        "Robotics",
+        "Game development",
+        "AR/VR",
+        "Competitive programming"
+      ]
+    }
+  ],
+  "interests": [
+    "Hackathons",
+    "Startups",
+    "Open source",
+    "AI/ML",
+    "Web development",
+    "App development",
+    "Cybersecurity",
+    "Data science",
+    "Robotics",
+    "Cloud",
+    "Blockchain",
+    "Game development",
+    "UI/UX",
+    "Competitive programming",
+    "Research",
+    "Entrepreneurship",
+    "Product building",
+    "Mentoring",
+    "Internships",
+    "Tech communities"
+  ]
+}

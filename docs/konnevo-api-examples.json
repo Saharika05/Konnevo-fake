@@ -1,0 +1,1045 @@
+{
+  "login_student": {
+    "status": 200,
+    "body": {
+      "user": {
+        "id": "00000000-0000-4000-8000-000000000001",
+        "name": "Priya",
+        "email": "student@konnevo.test",
+        "role": "student",
+        "hasPassword": true,
+        "onboardingComplete": true
+      }
+    }
+  },
+  "me_student": {
+    "status": 200,
+    "body": {
+      "user": {
+        "id": "00000000-0000-4000-8000-000000000001",
+        "name": "Priya",
+        "email": "student@konnevo.test",
+        "role": "student",
+        "hasPassword": true,
+        "onboardingComplete": true
+      }
+    }
+  },
+  "pw_change_bad": {
+    "status": 422,
+    "body": {
+      "error": {
+        "code": "validation_error",
+        "message": "Check the form.",
+        "fields": {
+          "current_password": "That is not your current password",
+          "password": "Use at least 8 characters"
+        }
+      }
+    }
+  },
+  "pw_change_ok": {
+    "status": 204,
+    "body": null
+  },
+  "blocks": {
+    "status": 200,
+    "body": {
+      "blocked": [
+        {
+          "id": "10000000-0000-4000-8000-000000000006",
+          "name": "Dev Gupta",
+          "college": "SRM Institute of Science and Technology"
+        }
+      ]
+    }
+  },
+  "account_bad": {
+    "status": 422,
+    "body": {
+      "error": {
+        "code": "validation_error",
+        "message": "Type DELETE to confirm.",
+        "fields": {
+          "confirm": "Type DELETE to confirm"
+        }
+      }
+    }
+  },
+  "teams": {
+    "status": 200,
+    "body": {
+      "teams": [],
+      "invites": [
+        {
+          "id": "f1a47039-c36e-4544-b9bb-819469ac885f",
+          "teamName": "Byte Benders",
+          "event": {
+            "id": "ux-open-house",
+            "title": "UX Open House",
+            "startDate": "2027-02-20"
+          },
+          "invitedBy": {
+            "id": "10000000-0000-4000-8000-000000000050",
+            "name": "Vikram Iyer"
+          },
+          "role": "Frontend"
+        }
+      ]
+    }
+  },
+  "team_patch_bad": {
+    "status": 404,
+    "body": {
+      "error": {
+        "code": "not_found",
+        "message": "We could not find that team.",
+        "fields": {}
+      }
+    }
+  },
+  "team_respond_ok": {
+    "status": 200,
+    "body": {
+      "team": {
+        "id": "f1a47039-c36e-4544-b9bb-819469ac885f",
+        "name": "Byte Benders",
+        "event": {
+          "id": "ux-open-house",
+          "title": "UX Open House",
+          "startDate": "2027-02-20"
+        },
+        "myRole": "Frontend",
+        "members": [
+          {
+            "id": "10000000-0000-4000-8000-000000000050",
+            "name": "Vikram Iyer",
+            "role": "Backend",
+            "accepted": true
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000001",
+            "name": "Priya",
+            "role": "Frontend",
+            "accepted": true
+          }
+        ],
+        "status": "registered",
+        "proof": "none"
+      }
+    }
+  },
+  "team_patch": {
+    "status": 200,
+    "body": {
+      "team": {
+        "id": "f1a47039-c36e-4544-b9bb-819469ac885f",
+        "name": "Byte Benders 2",
+        "event": {
+          "id": "ux-open-house",
+          "title": "UX Open House",
+          "startDate": "2027-02-20"
+        },
+        "myRole": "Backend",
+        "members": [
+          {
+            "id": "10000000-0000-4000-8000-000000000050",
+            "name": "Vikram Iyer",
+            "role": "Backend",
+            "accepted": true
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000001",
+            "name": "Priya",
+            "role": "Backend",
+            "accepted": true
+          }
+        ],
+        "status": "registered",
+        "proof": "none"
+      }
+    }
+  },
+  "register_click": {
+    "status": 204,
+    "body": null
+  },
+  "exp_post": {
+    "status": 201,
+    "body": {
+      "experience": {
+        "type": "hackathon",
+        "title": "Smart India Hackathon",
+        "organisation": "Govt of India",
+        "startMonth": "2026-03",
+        "description": "Finalist.",
+        "id": "94e8671c-4db0-4c59-b0a9-7a3292f176b1"
+      }
+    }
+  },
+  "exp_patch": {
+    "status": 200,
+    "body": {
+      "experience": {
+        "type": "hackathon",
+        "title": "Smart India Hackathon",
+        "organisation": "Govt of India",
+        "startMonth": "2026-03",
+        "description": "Finalist, team lead.",
+        "id": "94e8671c-4db0-4c59-b0a9-7a3292f176b1",
+        "endMonth": "2026-04"
+      }
+    }
+  },
+  "exp_delete": {
+    "status": 204,
+    "body": null
+  },
+  "exp_missing_org": {
+    "status": 422,
+    "body": {
+      "error": {
+        "code": "validation_error",
+        "message": "Check the form.",
+        "fields": {
+          "organisation": "Enter the organisation or event"
+        }
+      }
+    }
+  },
+  "event_item": {
+    "status": 200,
+    "body": {
+      "event": {
+        "id": "hackfest-2026",
+        "title": "HackFest 2026",
+        "type": "hackathon",
+        "mode": "online",
+        "startDate": "2026-11-14",
+        "endDate": "2026-11-15",
+        "place": "Online",
+        "registrationUrl": "https://example.com/hackfest-2026",
+        "description": "A 24-hour hackathon for students. Build in teams, meet new people and win prizes. Beginners are welcome.\n\nBring an idea or find one on the day. Mentors will be around all night.",
+        "clubName": "Tech Club",
+        "interestedCount": 42,
+        "expired": false
+      }
+    }
+  },
+  "login_admin": {
+    "status": 200,
+    "body": {
+      "user": {
+        "id": "00000000-0000-4000-8000-000000000002",
+        "name": "Tech Club",
+        "email": "admin@techclub.test",
+        "role": "club_admin",
+        "hasPassword": true,
+        "onboardingComplete": true,
+        "clubName": "Tech Club"
+      }
+    }
+  },
+  "me_admin": {
+    "status": 200,
+    "body": {
+      "user": {
+        "id": "00000000-0000-4000-8000-000000000002",
+        "name": "Tech Club",
+        "email": "admin@techclub.test",
+        "role": "club_admin",
+        "hasPassword": true,
+        "onboardingComplete": true,
+        "clubName": "Tech Club"
+      }
+    }
+  },
+  "admin_overview": {
+    "status": 200,
+    "body": {
+      "clubName": "Tech Club",
+      "stats": {
+        "events": 2,
+        "upcoming": 1,
+        "interested": 51
+      },
+      "events": [
+        {
+          "id": "open-source-meetup",
+          "title": "Open Source Meetup",
+          "type": "meetup",
+          "mode": "online",
+          "startDate": "2026-10-02",
+          "place": "Online",
+          "registrationUrl": "https://example.com/open-source-meetup",
+          "description": "Learn how to make your first open source contribution.",
+          "clubName": "Tech Club",
+          "interestedCount": 9,
+          "expired": true
+        }
+      ],
+      "reports": [
+        {
+          "id": "report-1",
+          "reason": "This project is not the person's own work.",
+          "subject": "Project: PlantPal",
+          "createdAt": "2026-10-30T07:43:42.169Z",
+          "status": "open"
+        }
+      ]
+    }
+  },
+  "login_core": {
+    "status": 200,
+    "body": {
+      "user": {
+        "id": "00000000-0000-4000-8000-000000000003",
+        "name": "Core team",
+        "email": "core@konnevo.test",
+        "role": "core",
+        "hasPassword": true,
+        "onboardingComplete": true
+      }
+    }
+  },
+  "me_core": {
+    "status": 200,
+    "body": {
+      "user": {
+        "id": "00000000-0000-4000-8000-000000000003",
+        "name": "Core team",
+        "email": "core@konnevo.test",
+        "role": "core",
+        "hasPassword": true,
+        "onboardingComplete": true
+      }
+    }
+  },
+  "sa_overview": {
+    "status": 200,
+    "body": {
+      "totals": {
+        "users": 1350,
+        "newUsersThisWeek": 61,
+        "profilesCompleted": 1067,
+        "colleges": 8,
+        "clubs": 10,
+        "liveEvents": 27,
+        "interestedClicks": 5643,
+        "registerClicks": 2736,
+        "teamsFormed": 477,
+        "matches": 2123,
+        "proofsUploaded": 345,
+        "proofsConfirmed": 243,
+        "openReports": 3
+      },
+      "topEvents": [
+        {
+          "id": "ev-19",
+          "title": "Startup Pitch Night Edition 2",
+          "interested": 245
+        },
+        {
+          "id": "ev-38",
+          "title": "Robotics Challenge Edition 3",
+          "interested": 239
+        }
+      ],
+      "recentAudit": [
+        {
+          "id": "aud-1",
+          "at": "2026-10-20T10:02:00Z",
+          "actor": "core@konnevo.test",
+          "action": "admin_added",
+          "target": "tech@college.edu → Tech Club"
+        },
+        {
+          "id": "aud-2",
+          "at": "2026-10-20T10:05:00Z",
+          "actor": "core@konnevo.test",
+          "action": "admin_added",
+          "target": "ai@techuni.edu → AI Club"
+        }
+      ]
+    }
+  },
+  "sa_events": {
+    "status": 200,
+    "body": {
+      "items": [
+        {
+          "id": "ev-41",
+          "title": "Mobile Dev Day Edition 3",
+          "club": "Tech Club",
+          "college": "Sample College, Bengaluru",
+          "type": "hackathon",
+          "mode": "offline",
+          "startDate": "2027-02-12",
+          "endDate": "2027-02-13",
+          "interested": 198,
+          "registerClicks": 89,
+          "teams": 15
+        },
+        {
+          "id": "ev-37",
+          "title": "Web3 Workshop Edition 3",
+          "club": "Open Source Guild",
+          "college": "PES University, Bengaluru",
+          "type": "hackathon",
+          "mode": "online",
+          "startDate": "2027-01-27",
+          "endDate": "2027-01-28",
+          "interested": 165,
+          "registerClicks": 91,
+          "teams": 22
+        }
+      ],
+      "page": 1,
+      "pageSize": 2,
+      "total": 11
+    }
+  },
+  "sa_event": {
+    "status": 200,
+    "body": {
+      "id": "ev-1",
+      "title": "HackFest 2026",
+      "club": "Tech Club",
+      "college": "Sample College, Bengaluru",
+      "type": "hackathon",
+      "mode": "online",
+      "startDate": "2026-09-05",
+      "endDate": "2026-09-06",
+      "place": "https://meet.example.org/konnevo",
+      "registrationUrl": "https://events.example.org/register/1",
+      "posterUrl": null,
+      "funnel": {
+        "interested": 60,
+        "registerClicks": 19,
+        "teams": 4,
+        "matches": 13,
+        "proofsUploaded": 2,
+        "proofsConfirmed": 2
+      }
+    }
+  },
+  "sa_export": {
+    "status": 200,
+    "contentDisposition": "attachment; filename=\"konnevo_events_2026-10-30.csv\"",
+    "body": "Title,Club,College,Type,Mode,Start date,End date,Interested,Register-link clicks,Teams formed\nHackFest 2026,Tech Club,\"Sample College, Bengaluru\",hackathon,online,2026-09-05,2026-09-06,60,19,4\nStartup Pitch Night 2026,DS Club,Metro College,hackathon,offline,2026-09-21,2026-09-22,81,51,8"
+  },
+  "sa_reports": {
+    "status": 200,
+    "body": {
+      "items": [
+        {
+          "id": "rep-6",
+          "createdAt": "2026-10-10T08:15:00Z",
+          "type": "project",
+          "target": "Smart Attendance",
+          "reason": "Offensive description",
+          "status": "open",
+          "reporter": "Dev S."
+        },
+        {
+          "id": "rep-1",
+          "createdAt": "2026-10-09T09:12:00Z",
+          "type": "event",
+          "target": "AI Build Sprint 2026",
+          "reason": "Wrong date shown",
+          "status": "open",
+          "reporter": "Arjun K."
+        }
+      ],
+      "page": 1,
+      "pageSize": 2,
+      "total": 3
+    }
+  },
+  "sa_report": {
+    "status": 200,
+    "body": {
+      "id": "rep-2",
+      "createdAt": "2026-10-08T17:40:00Z",
+      "type": "event",
+      "target": "Data Science Day 2026",
+      "targetSummary": "Event by DS Club, Metro College",
+      "reason": "Looks like spam",
+      "status": "reviewing",
+      "reporter": "Meera R.",
+      "history": [
+        {
+          "status": "open",
+          "at": "2026-10-08T17:40:00Z",
+          "by": "Meera R."
+        },
+        {
+          "status": "reviewing",
+          "at": "2026-10-09T08:00:00Z",
+          "by": "core@konnevo.test",
+          "note": "Checking the club page"
+        }
+      ]
+    }
+  },
+  "sa_report_patch": {
+    "status": 200,
+    "body": {
+      "id": "rep-1",
+      "createdAt": "2026-10-09T09:12:00Z",
+      "type": "event",
+      "target": "AI Build Sprint 2026",
+      "targetSummary": "Event by AI Club, Tech University",
+      "reason": "Wrong date shown",
+      "status": "reviewing",
+      "reporter": "Arjun K.",
+      "history": [
+        {
+          "status": "open",
+          "at": "2026-10-09T09:12:00Z",
+          "by": "Arjun K."
+        },
+        {
+          "status": "reviewing",
+          "at": "2026-10-30T07:43:42.199Z",
+          "by": "core@konnevo.test",
+          "note": "Checking with the club"
+        }
+      ]
+    }
+  },
+  "sa_report_bad": {
+    "status": 422,
+    "body": {
+      "error": {
+        "code": "validation_error",
+        "message": "Check the form.",
+        "fields": {
+          "status": "Choose a status"
+        }
+      }
+    }
+  },
+  "sa_clubs": {
+    "status": 200,
+    "body": {
+      "items": [
+        {
+          "id": "club-1",
+          "name": "Tech Club",
+          "college": "Sample College, Bengaluru",
+          "admin": {
+            "id": "adm-1",
+            "email": "tech@college.edu"
+          },
+          "eventsCount": 5
+        },
+        {
+          "id": "club-2",
+          "name": "AI Club",
+          "college": "Tech University",
+          "admin": {
+            "id": "adm-2",
+            "email": "ai@techuni.edu"
+          },
+          "eventsCount": 4
+        }
+      ],
+      "page": 1,
+      "pageSize": 2,
+      "total": 10
+    }
+  },
+  "sa_admin_add": {
+    "status": 201,
+    "body": {
+      "id": "adm-103"
+    }
+  },
+  "sa_admin_409": {
+    "status": 409,
+    "body": {
+      "error": {
+        "code": "club_has_admin",
+        "message": "This club already has an admin.",
+        "fields": {}
+      }
+    }
+  },
+  "sa_admin_409b": {
+    "status": 409,
+    "body": {
+      "error": {
+        "code": "email_already_admin",
+        "message": "That email is already an admin of another club.",
+        "fields": {}
+      }
+    }
+  },
+  "sa_admin_422": {
+    "status": 422,
+    "body": {
+      "error": {
+        "code": "validation_error",
+        "message": "Check the form.",
+        "fields": {
+          "clubId": "Choose a club",
+          "email": "That does not look like an email address"
+        }
+      }
+    }
+  },
+  "sa_admin_del": {
+    "status": 204
+  },
+  "sa_colleges": {
+    "status": 200,
+    "body": {
+      "items": [
+        {
+          "id": "col-1",
+          "name": "Sample College, Bengaluru",
+          "nameKey": "sample college bengaluru",
+          "students": 412,
+          "clubs": 2,
+          "createdAt": "2026-06-02"
+        },
+        {
+          "id": "col-2",
+          "name": "Tech University",
+          "nameKey": "tech university",
+          "students": 366,
+          "clubs": 2,
+          "createdAt": "2026-06-03"
+        }
+      ],
+      "page": 1,
+      "pageSize": 2,
+      "total": 8
+    }
+  },
+  "sa_merge": {
+    "status": 200,
+    "body": {
+      "studentsMoved": 31,
+      "clubsMoved": 1
+    }
+  },
+  "sa_merge_422": {
+    "status": 422,
+    "body": {
+      "error": {
+        "code": "validation_error",
+        "message": "Choose a college to keep and at least one to merge.",
+        "fields": {}
+      }
+    }
+  },
+  "sa_audit": {
+    "status": 200,
+    "body": {
+      "items": [
+        {
+          "id": "aud-104",
+          "at": "2026-10-30T07:43:42.206Z",
+          "actor": "core@konnevo.test",
+          "action": "admin_added",
+          "target": "robotics@techuni.edu → Robotics Club"
+        },
+        {
+          "id": "aud-6",
+          "at": "2026-10-22T12:46:00Z",
+          "actor": "backup@konnevo.test",
+          "action": "admin_added",
+          "target": "cell@city.edu → Startup Cell"
+        }
+      ],
+      "page": 1,
+      "pageSize": 2,
+      "total": 4
+    }
+  },
+  "sa_analytics": {
+    "status": 200,
+    "body": {
+      "filters": {
+        "weeks": 4,
+        "college": null,
+        "type": null
+      },
+      "kpis": [
+        {
+          "key": "students",
+          "label": "Students",
+          "unit": "count",
+          "value": 1350,
+          "previous": 1089,
+          "spark": [
+            62,
+            80,
+            58,
+            61
+          ]
+        },
+        {
+          "key": "signups",
+          "label": "New students",
+          "unit": "count",
+          "value": 261,
+          "previous": 291,
+          "spark": [
+            62,
+            80,
+            58,
+            61
+          ]
+        },
+        {
+          "key": "interested",
+          "label": "Interested clicks",
+          "unit": "count",
+          "value": 1320,
+          "previous": 1151,
+          "spark": [
+            339,
+            410,
+            290,
+            281
+          ]
+        },
+        {
+          "key": "registerRate",
+          "label": "Register-click rate",
+          "unit": "percent",
+          "value": 51,
+          "previous": 47.6,
+          "spark": [
+            35.4,
+            42.9,
+            66.9,
+            65.1
+          ]
+        },
+        {
+          "key": "matchRate",
+          "label": "Match rate",
+          "unit": "percent",
+          "value": 39,
+          "previous": 34.5,
+          "spark": [
+            38.3,
+            31.2,
+            50.3,
+            39.5
+          ]
+        },
+        {
+          "key": "attendanceRate",
+          "label": "Attendance rate",
+          "unit": "percent",
+          "value": 11.9,
+          "previous": 13.1,
+          "spark": [
+            15.8,
+            11.9,
+            8.8,
+            12.6
+          ]
+        }
+      ],
+      "trend": [
+        {
+          "weekStart": "2026-10-05",
+          "signups": 62,
+          "interested": 339,
+          "registerClicks": 120,
+          "matches": 130
+        },
+        {
+          "weekStart": "2026-10-12",
+          "signups": 80,
+          "interested": 410,
+          "registerClicks": 176,
+          "matches": 128
+        },
+        {
+          "weekStart": "2026-10-19",
+          "signups": 58,
+          "interested": 290,
+          "registerClicks": 194,
+          "matches": 146
+        },
+        {
+          "weekStart": "2026-10-26",
+          "signups": 61,
+          "interested": 281,
+          "registerClicks": 183,
+          "matches": 111
+        }
+      ],
+      "funnel": [
+        {
+          "key": "interested",
+          "label": "Interested",
+          "value": 5643
+        },
+        {
+          "key": "register",
+          "label": "Register-link clicks",
+          "value": 2736
+        },
+        {
+          "key": "teams",
+          "label": "Teams formed",
+          "value": 477
+        },
+        {
+          "key": "attended",
+          "label": "Attended (certificate uploaded)",
+          "value": 345
+        }
+      ],
+      "byType": [
+        {
+          "type": "hackathon",
+          "events": 11,
+          "interested": 1697,
+          "registerClicks": 837
+        },
+        {
+          "type": "meetup",
+          "events": 10,
+          "interested": 1409,
+          "registerClicks": 673
+        },
+        {
+          "type": "conference",
+          "events": 10,
+          "interested": 1363,
+          "registerClicks": 667
+        },
+        {
+          "type": "workshop",
+          "events": 10,
+          "interested": 1174,
+          "registerClicks": 559
+        }
+      ],
+      "byMode": [
+        {
+          "mode": "offline",
+          "events": 27,
+          "interested": 3679
+        },
+        {
+          "mode": "online",
+          "events": 14,
+          "interested": 1964
+        }
+      ],
+      "byCollege": [
+        {
+          "id": "col-3",
+          "name": "PES University, Bengaluru",
+          "students": 332,
+          "events": 8,
+          "interested": 1165
+        },
+        {
+          "id": "col-2",
+          "name": "Tech University",
+          "students": 366,
+          "events": 8,
+          "interested": 1121
+        },
+        {
+          "id": "col-1",
+          "name": "Sample College, Bengaluru",
+          "students": 412,
+          "events": 9,
+          "interested": 1101
+        },
+        {
+          "id": "col-7",
+          "name": "XYZ College",
+          "students": 54,
+          "events": 4,
+          "interested": 686
+        },
+        {
+          "id": "col-6",
+          "name": "Metro College",
+          "students": 26,
+          "events": 4,
+          "interested": 676
+        },
+        {
+          "id": "col-8",
+          "name": "xyz college of engg",
+          "students": 12,
+          "events": 4,
+          "interested": 456
+        },
+        {
+          "id": "col-5",
+          "name": "City Institute",
+          "students": 148,
+          "events": 4,
+          "interested": 438
+        }
+      ],
+      "heatmap": {
+        "rows": [
+          {
+            "id": "col-3",
+            "name": "PES University, Bengaluru"
+          },
+          {
+            "id": "col-2",
+            "name": "Tech University"
+          },
+          {
+            "id": "col-1",
+            "name": "Sample College, Bengaluru"
+          },
+          {
+            "id": "col-7",
+            "name": "XYZ College"
+          },
+          {
+            "id": "col-6",
+            "name": "Metro College"
+          },
+          {
+            "id": "col-8",
+            "name": "xyz college of engg"
+          }
+        ],
+        "cols": [
+          "hackathon",
+          "meetup",
+          "conference",
+          "workshop"
+        ],
+        "cells": [
+          [
+            280,
+            312,
+            385,
+            188
+          ],
+          [
+            0,
+            679,
+            0,
+            442
+          ],
+          [
+            475,
+            221,
+            120,
+            285
+          ],
+          [
+            366,
+            0,
+            320,
+            0
+          ],
+          [
+            314,
+            0,
+            362,
+            0
+          ],
+          [
+            0,
+            197,
+            0,
+            259
+          ]
+        ]
+      },
+      "events": [
+        {
+          "id": "ev-1",
+          "title": "HackFest 2026",
+          "type": "hackathon",
+          "interested": 60,
+          "registerClicks": 19,
+          "teams": 4
+        },
+        {
+          "id": "ev-2",
+          "title": "Founders Meetup 2026",
+          "type": "meetup",
+          "interested": 188,
+          "registerClicks": 61,
+          "teams": 15
+        }
+      ],
+      "monthly": [
+        {
+          "month": "2026-09",
+          "events": 7
+        },
+        {
+          "month": "2026-10",
+          "events": 8
+        },
+        {
+          "month": "2026-11",
+          "events": 7
+        },
+        {
+          "month": "2026-12",
+          "events": 8
+        },
+        {
+          "month": "2027-01",
+          "events": 8
+        },
+        {
+          "month": "2027-02",
+          "events": 3
+        }
+      ],
+      "reportsByStatus": [
+        {
+          "status": "open",
+          "count": 2
+        },
+        {
+          "status": "reviewing",
+          "count": 2
+        },
+        {
+          "status": "resolved",
+          "count": 1
+        },
+        {
+          "status": "dismissed",
+          "count": 1
+        }
+      ],
+      "clubCoverage": {
+        "withAdmin": 7,
+        "withoutAdmin": 3
+      }
+    }
+  },
+  "sa_forbidden": {
+    "status": 0,
+    "body": null
+  },
+  "sa_403": {
+    "status": 403,
+    "body": {
+      "error": {
+        "code": "forbidden",
+        "message": "Not allowed.",
+        "fields": {}
+      }
+    }
+  }
+}

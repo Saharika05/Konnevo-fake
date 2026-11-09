@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>konnevo olive theme preview</title>
+<style>
+:root{
+  /* Brand */
+  --color-soft-white: #e8e9df;
+  --color-sage: #a9b887;
+  --color-deep-olive: #2e3d28;
+  --color-ink: #111111; /* text only */
+
+  /* Derived */
+  --color-paper: #f3f4ec;
+  --color-sage-200: #d7e0c1;
+  --color-moss: #6e8a4f;
+  --color-moss-dark: #4f6b3a;
+  --color-olive-700: #3c4f34;
+  --color-olive-900: #1f2a1b;
+  --color-line-light: #ced1c5;
+  --color-line-paper: #d7dad1;
+  --color-line-dark: #485542;
+
+  /* Status */
+  --color-brick: #a63a28;
+  --color-brick-glow: #b3442f;
+  --color-brick-tint: #f0d5ce;
+  --color-brick-text: #7a2a1b;
+  --color-amber-tint: #ebddb0;
+  --color-amber-text: #7a4e0e;
+  --color-dismissed: #d6d8c9;
+
+  /* Slide to match and loading */
+  --color-knob-mid: #8b9384;
+  --color-shimmer-light-a: #dfe1d2;
+  --color-shimmer-light-b: #eef0e4;
+  --color-shimmer-dark-a: #3c4f34;
+  --color-shimmer-dark-b: #4a6040;
+
+  /* Softer shadows tinted with deep olive instead of black */
+  --shadow-sm: 0 1px 2px 0 color-mix(in srgb, #2e3d28 14%, transparent);
+  --shadow-md: 0 4px 10px -2px color-mix(in srgb, #2e3d28 18%, transparent);
+  --shadow-lg: 0 10px 24px -6px color-mix(in srgb, #2e3d28 22%, transparent);
+  --shadow-xl: 0 20px 44px -12px color-mix(in srgb, #2e3d28 28%, transparent);
+
+  --font-display: "Syne Variable", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+
+/* ==================================================================
+   konnevo olive theme: colours only.
+   Every colour is one of the approved hex values. Light is the default.
+   Add the class `theme-dark` to any section that should be a dark stage
+   (navbar, footer, slide-to-match page, match popup, /core sidebar):
+   it swaps the semantic variables below for the dark set.
+   ================================================================== */
+
+/* ---- 1. Brand and derived palette (never changes per section) ---- */
+
+
+/* ---- 2. Semantic colours (these follow the section: light or dark) ---- */
+
+
+/* Light (default) */
+:root,
+.theme-light {
+  color-scheme: light;
+  --background: #e8e9df;
+  --foreground: #111111;
+  --card: #f3f4ec;
+  --card-foreground: #111111;
+  --popover: #f3f4ec;
+  --popover-foreground: #111111;
+  --primary: #2e3d28;
+  --primary-foreground: #e8e9df;
+  --secondary: #a9b887;
+  --secondary-foreground: #111111;
+  --muted: #d7e0c1; /* shadcn "muted" background */
+  --muted-foreground: #3c4f34;
+  --accent: #d7e0c1;
+  --accent-foreground: #2e3d28;
+  --destructive: #a63a28;
+  --destructive-foreground: #e8e9df;
+  --border: #ced1c5;
+  --input: #6e8a4f;
+  --ring: #4f6b3a;
+
+  --heading: #2e3d28;
+  --subtle: #d7e0c1;
+  --input-bg: #f3f4ec;
+  --line-paper: #d7dad1;
+  --link: #4f6b3a;
+  --primary-soft: #d7e0c1;
+  --primary-text: #4f6b3a;
+  --primary-hover: #3c4f34;
+  --secondary-hover: #d7e0c1;
+  --secondary-hover-foreground: #2e3d28;
+
+  --success: #4f6b3a;
+  --success-soft: #d7e0c1;
+  --success-text: #2e3d28;
+  --danger: #a63a28;
+  --danger-soft: #f0d5ce;
+  --danger-text: #7a2a1b;
+  --warning-soft: #ebddb0;
+  --warning-text: #7a4e0e;
+
+  --chip-text: #2e3d28;
+  --scroll-thumb: #6e8a4f;
+  --scroll-track: #e8e9df;
+}
+
+/* Dark stage: navbar, footer, slide-to-match, match popup, /core sidebar */
+.theme-dark {
+  color-scheme: dark;
+  --background: #1f2a1b;
+  --foreground: #e8e9df;
+  --card: #2e3d28;
+  --card-foreground: #e8e9df;
+  --popover: #2e3d28;
+  --popover-foreground: #e8e9df;
+  --primary: #a9b887;
+  --primary-foreground: #2e3d28;
+  --secondary: #3c4f34;
+  --secondary-foreground: #e8e9df;
+  --muted: #3c4f34;
+  --muted-foreground: #d7e0c1;
+  --accent: #3c4f34;
+  --accent-foreground: #e8e9df;
+  --destructive: #a63a28;
+  --destructive-foreground: #e8e9df;
+  --border: #485542;
+  --input: #485542;
+  --ring: #a9b887;
+
+  --heading: #e8e9df;
+  --subtle: #3c4f34;
+  --input-bg: #1f2a1b;
+  --line-paper: #485542;
+  --link: #a9b887;
+  --primary-soft: #1f2a1b;
+  --primary-text: #a9b887;
+  --primary-hover: #d7e0c1;
+  --secondary-hover: #485542;
+  --secondary-hover-foreground: #e8e9df;
+
+  --success: #4f6b3a;
+  --success-soft: #3c4f34;
+  --success-text: #d7e0c1;
+  --danger: #a63a28;
+  --danger-soft: #7a2a1b;
+  --danger-text: #f0d5ce;
+  --warning-soft: #7a4e0e;
+  --warning-text: #ebddb0;
+
+  --chip-text: #a9b887;
+  --scroll-thumb: #485542;
+  --scroll-track: #1f2a1b;
+
+  color: var(--foreground);
+}
+/* Puts a soft white card back on a dark stage */
+.theme-light {
+  color: var(--foreground);
+}
+/* Navbar, footer and the /core sidebar sit on the slightly lighter olive */
+.bar-dark {
+  background-color: #2e3d28;
+  border-color: #485542;
+  color: #e8e9df;
+}
+
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    overflow-x: clip;
+  }
+  h1, h2, h3, h4 {
+    color: var(--heading);
+  }
+  a {
+    text-underline-offset: 3px;
+  }
+  ::selection {
+    background: #a9b887;
+    color: #111111;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  input,
+  textarea,
+  select {
+    background-color: var(--input-bg);
+    color: var(--foreground);
+    border-color: var(--input);
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--muted-foreground);
+    opacity: 1;
+  }
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+    border-radius: 9999px;
+    border: 3px solid var(--scroll-track);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4f6b3a;
+  }
+  .theme-dark ::-webkit-scrollbar-thumb:hover {
+    background: #a9b887;
+  }
+
+
+/* Buttons and chips: keep text readable on the pale sage fills.
+   (#4f6b3a on #d7e0c1 is only 4.38:1, so deep olive is forced there.) */
+[class*="bg-primary-soft"].text-primary-text,
+[class*="bg-core-primary-soft"].text-primary-text,
+[class*="hover:bg-core-primary-soft"].text-primary-text:hover {
+  color: var(--chip-text);
+}
+
+/* ------------------------------------------------------------------
+   Reusable looks
+   ------------------------------------------------------------------ */
+.text-gradient {
+  background: linear-gradient(100deg, #2e3d28 0%, #4f6b3a 55%, #6e8a4f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.theme-dark .text-gradient {
+  background: linear-gradient(100deg, #e8e9df 0%, #d7e0c1 55%, #a9b887 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* 404 and error numerals (replaces pink to cyan) */
+.text-gradient-404 {
+  background: linear-gradient(100deg, #2e3d28 0%, #6e8a4f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Brand surfaces */
+.bg-brand-light { background-color: #e8e9df; }
+.bg-brand-paper { background-color: #f3f4ec; border: 1px solid #ced1c5; }
+.stage-dark { background-color: #1f2a1b; color: #e8e9df; }
+
+/* Shadows and glows used by components */
+.shadow-knob { box-shadow: 0 6px 22px color-mix(in srgb, #111111 45%, transparent); }
+.shadow-inset-track { box-shadow: inset 0 2px 12px color-mix(in srgb, #1f2a1b 55%, transparent); }
+.shadow-card-lift { box-shadow: 0 30px 80px -30px color-mix(in srgb, #2e3d28 55%, transparent); }
+.shadow-dock { box-shadow: 0 20px 60px -20px color-mix(in srgb, #111111 65%, transparent); }
+.shadow-note { box-shadow: 0 10px 40px -15px color-mix(in srgb, #4f6b3a 60%, transparent); }
+.shadow-ring-glow { box-shadow: 0 0 40px color-mix(in srgb, #6e8a4f 55%, transparent); }
+.shadow-ring-glow-soft { box-shadow: 0 0 40px color-mix(in srgb, #a9b887 60%, transparent); }
+/* Soft mesh and grid inside the profile card */
+.hero-mesh {
+  background-image:
+    radial-gradient(60% 50% at 20% 0%, color-mix(in srgb, #a9b887 55%, transparent), transparent),
+    radial-gradient(50% 50% at 90% 30%, color-mix(in srgb, #d7e0c1 80%, transparent), transparent),
+    radial-gradient(50% 40% at 50% 110%, color-mix(in srgb, #6e8a4f 30%, transparent), transparent);
+}
+.hero-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, #2e3d28 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, #2e3d28 6%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse at 50% 30%, #111111, transparent 75%);
+}
+/* An aurora that fills its parent (for example inside the match popup) */
+.aurora.aurora-contained {
+  position: absolute;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+/* Dialog overlay: #1f2a1b at 55% with blur */
+.overlay-dark {
+  background-color: color-mix(in srgb, #1f2a1b 55%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ------------------------------------------------------------------
+   Animated backgrounds (transform only). Use <AuroraBackground variant="light|dark" />.
+   Slow drift 20 to 30 s, ease-in-out, infinite alternate. Static when the
+   device asks for reduced motion. No flashing.
+   ------------------------------------------------------------------ */
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.aurora-light { background-color: #e8e9df; }
+.aurora-dark { background-color: #1f2a1b; }
+.aurora-blob {
+  position: absolute;
+  width: 46vmax;
+  height: 46vmax;
+  border-radius: 9999px;
+  filter: blur(110px);
+  will-change: transform;
+}
+.aurora-a { top: -18vmax; left: -12vmax; animation: drift-a 22s ease-in-out infinite alternate; }
+.aurora-b { top: 10vmax; right: -20vmax; animation: drift-b 26s ease-in-out infinite alternate; }
+.aurora-c { bottom: -26vmax; left: 20vmax; animation: drift-a 30s ease-in-out infinite alternate-reverse; }
+
+.aurora-light .aurora-a { background: #a9b887; opacity: 0.35; }
+.aurora-light .aurora-b { background: #6e8a4f; opacity: 0.25; }
+.aurora-light .aurora-c { background: #f3f4ec; opacity: 0.9; }
+.aurora-dark .aurora-a { background: #a9b887; opacity: 0.25; }
+.aurora-dark .aurora-b { background: #4f6b3a; opacity: 0.35; }
+.aurora-dark .aurora-c { background: #e8e9df; opacity: 0.08; }
+
+.aurora-grid {
+  position: absolute;
+  inset: 0;
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at 50% 20%, #111111 20%, transparent 70%);
+}
+.aurora-light .aurora-grid,
+.bg-grid-light {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, #2e3d28 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, #2e3d28 6%, transparent) 1px, transparent 1px);
+}
+.aurora-dark .aurora-grid,
+.bg-grid-dark {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, #e8e9df 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, #e8e9df 6%, transparent) 1px, transparent 1px);
+}
+.bg-grid-light,
+.bg-grid-dark {
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+@keyframes drift-a {
+  to { transform: translate3d(12vmax, 8vmax, 0) scale(1.15); }
+}
+@keyframes drift-b {
+  to { transform: translate3d(-14vmax, 6vmax, 0) scale(0.9); }
+}
+
+/* ------------------------------------------------------------------
+   Glows, shimmer and lift
+   ------------------------------------------------------------------ */
+.glow-match {
+  box-shadow:
+    0 0 0 2px #6e8a4f,
+    0 0 48px 6px color-mix(in srgb, #a9b887 60%, transparent);
+}
+.glow-skip {
+  box-shadow: 0 0 48px 6px color-mix(in srgb, #b3442f 45%, transparent);
+}
+.glow-match-knob {
+  box-shadow:
+    0 0 0 2px #6e8a4f,
+    0 0 24px 2px color-mix(in srgb, #a9b887 60%, transparent);
+}
+.glow-skip-knob {
+  box-shadow: 0 0 24px 2px color-mix(in srgb, #b3442f 45%, transparent);
+}
+/* Slide knob track: skip end > middle > match end */
+.knob-track {
+  background: linear-gradient(to right, #a63a28 0%, #a63a28 30%, #8b9384 50%, #a9b887 70%, #6e8a4f 100%);
+}
+/* Progress and funnel bars */
+.bar-fill {
+  background: linear-gradient(to right, #a9b887, #6e8a4f);
+}
+
+.hover-lift {
+  transition:
+    transform 0.2s ease-out,
+    box-shadow 0.2s ease-out;
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -20px color-mix(in srgb, #2e3d28 45%, transparent);
+}
+.theme-dark .hover-lift:hover {
+  box-shadow: 0 18px 40px -20px color-mix(in srgb, #111111 70%, transparent);
+}
+
+/* Loading placeholder. A soft sweep that only moves with transform. */
+.shimmer-light,
+.shimmer-dark {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-light { background-color: #dfe1d2; }
+.shimmer-dark { background-color: #3c4f34; }
+.shimmer-light::after,
+.shimmer-dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  animation: shimmer-sweep 1.6s ease-in-out infinite;
+}
+.shimmer-light::after { background: linear-gradient(90deg, transparent, #eef0e4, transparent); }
+.shimmer-dark::after { background: linear-gradient(90deg, transparent, #4a6040, transparent); }
+@keyframes shimmer-sweep {
+  to { transform: translateX(100%); }
+}
+.skeleton {
+  border-radius: 0.5rem;
+}
+
+/* Toasts (Sonner). Text is soft white on all of them. Sonner's own rich colours are replaced
+   by overriding its variables (the doubled attribute selector beats its default rules). */
+[data-sonner-toaster][data-sonner-theme][data-sonner-theme] {
+  --normal-bg: #2e3d28;
+  --normal-text: #e8e9df;
+  --normal-border: #485542;
+  --success-bg: #4f6b3a;
+  --success-text: #e8e9df;
+  --success-border: #4f6b3a;
+  --error-bg: #a63a28;
+  --error-text: #e8e9df;
+  --error-border: #a63a28;
+  --info-bg: #2e3d28;
+  --info-text: #e8e9df;
+  --info-border: #485542;
+  --warning-bg: #7a4e0e;
+  --warning-text: #ebddb0;
+  --warning-border: #7a4e0e;
+}
+
+/* ------------------------------------------------------------------
+   Headline lines that slide up one after another
+   ------------------------------------------------------------------ */
+.rise {
+  animation: rise 0.95s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes rise {
+  from { transform: translateY(108%) rotate(2deg); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+/* ------------------------------------------------------------------
+   Elements that fade and float in as you scroll to them
+   ------------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ------------------------------------------------------------------
+   3D tilt card (follows the pointer on laptops, still on phones)
+   ------------------------------------------------------------------ */
+.tilt-wrap { perspective: 900px; }
+.tilt {
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition:
+    transform 0.18s ease-out,
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.tilt:hover {
+  border-color: color-mix(in srgb, #6e8a4f 70%, transparent);
+  box-shadow: 0 18px 50px -20px color-mix(in srgb, #4f6b3a 55%, transparent);
+}
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    420px circle at var(--gx, 50%) var(--gy, 50%),
+    color-mix(in srgb, #f3f4ec 60%, transparent),
+    transparent 60%
+  );
+  transition: opacity 0.2s;
+}
+.tilt:hover .tilt-glare { opacity: 1; }
+
+/* ------------------------------------------------------------------
+   Scrolling ticker
+   ------------------------------------------------------------------ */
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #111111 12%, #111111 88%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0.75rem;
+  animation: marquee 48s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-item {
+  white-space: nowrap;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--muted-foreground);
+  border-radius: 9999px;
+  padding: 0.4rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+/* ------------------------------------------------------------------
+   3D orbit scene: people orbit a glowing konnevo core
+   ------------------------------------------------------------------ */
+.orbit-scene {
+  --orbit-r: clamp(112px, 33vw, 168px);
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1;
+  margin-inline: auto;
+  perspective: 1100px;
+}
+.orbit-tilt {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(calc(-16deg + var(--py, 0) * -10deg)) rotateY(calc(var(--px, 0) * 14deg));
+  transition: transform 0.25s ease-out;
+}
+.orbit-core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 118px;
+  height: 118px;
+  margin: -59px 0 0 -59px;
+  display: grid;
+  place-items: center;
+  border-radius: 9999px;
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #2e3d28;
+  background: radial-gradient(circle at 30% 28%, #d7e0c1 0%, #a9b887 42%, #6e8a4f 100%);
+  box-shadow:
+    0 0 60px 8px color-mix(in srgb, #a9b887 60%, transparent),
+    inset 0 -10px 24px color-mix(in srgb, #2e3d28 35%, transparent);
+  animation: core-pulse 4.5s ease-in-out infinite;
+}
+.orbit-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--orbit-r) * 2);
+  height: calc(var(--orbit-r) * 2);
+  margin: calc(var(--orbit-r) * -1) 0 0 calc(var(--orbit-r) * -1);
+  border-radius: 9999px;
+  border: 1px dashed color-mix(in srgb, #2e3d28 30%, transparent);
+  transform: rotateX(90deg);
+}
+.orbit-stage {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: orbit-spin 28s linear infinite;
+}
+.orbit-chip {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  transform: rotateY(var(--a)) translateZ(var(--orbit-r));
+}
+.orbit-chip-face {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.8rem 0.35rem 0.35rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, #f3f4ec 94%, transparent);
+  color: #111111;
+  box-shadow: 0 10px 30px -12px color-mix(in srgb, #2e3d28 55%, transparent);
+  white-space: nowrap;
+  animation: orbit-face 28s linear infinite;
+}
+@keyframes orbit-spin {
+  to { transform: rotateY(360deg); }
+}
+@keyframes orbit-face {
+  from { transform: translate(-50%, -50%) rotateY(calc(var(--a) * -1)); }
+  to { transform: translate(-50%, -50%) rotateY(calc(var(--a) * -1 - 360deg)); }
+}
+@keyframes core-pulse {
+  50% {
+    transform: scale(1.06);
+    box-shadow:
+      0 0 80px 14px color-mix(in srgb, #a9b887 70%, transparent),
+      inset 0 -10px 24px color-mix(in srgb, #2e3d28 35%, transparent);
+  }
+}
+
+/* ------------------------------------------------------------------
+   Match popup confetti. Falls from the top, once. Colours are set by
+   the component from CONFETTI_COLORS in src/lib/theme.ts.
+   ------------------------------------------------------------------ */
+.confetti {
+  position: absolute;
+  top: -12px;
+  width: 8px;
+  height: 14px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: confetti-fall 2.6s ease-in forwards;
+  pointer-events: none;
+}
+@keyframes confetti-fall {
+  0% { opacity: 1; transform: translate3d(0, 0, 0) rotate(0deg); }
+  100% { opacity: 0; transform: translate3d(var(--dx, 0), 460px, 0) rotate(540deg); }
+}
+
+/* People who switch animations off in their device settings get a calm page */
+@media (prefers-reduced-motion: reduce) {
+  .confetti { display: none; }
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .marquee-track { animation: none !important; }
+  .aurora-blob { animation: none !important; }
+  .shimmer-light::after,
+  .shimmer-dark::after { animation: none !important; transform: none; opacity: 0; }
+}
+
+/* Core admin: light surfaces like the student screens. The sidebar gets the class `theme-dark bar-dark`. */
+.core-root {
+  color: var(--foreground);
+  color-scheme: light;
+}
+.core-root .theme-dark { color-scheme: dark; }
+.core-root :focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--background);color:var(--foreground)}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 80px}
+h1,h2,h3{font-family:"Syne",system-ui,sans-serif;margin:0}
+h1{font-size:2rem;font-weight:800} h2{font-size:1.35rem;margin:40px 0 12px}
+.lbl{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin:16px 0 8px;color:var(--muted-foreground)}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
+.sw div{border-radius:12px;padding:12px;min-height:76px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--border);font-size:.78rem}
+.sw b{font-size:.8rem}
+.panel{position:relative;overflow:hidden;border-radius:20px;border:1px solid var(--border);min-height:300px;padding:24px;isolation:isolate}
+.panel .aurora{position:absolute;inset:0;z-index:-1}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0}
+.btn{font:600 .875rem system-ui;border-radius:8px;padding:10px 16px;border:1px solid transparent;cursor:pointer;transition:background .15s}
+.btn-primary{background:var(--primary);color:var(--primary-foreground)}
+.btn-primary:hover{background:var(--primary-hover);color:var(--primary-foreground)}
+.btn-secondary{background:var(--secondary);color:var(--secondary-foreground)}
+.btn-secondary:hover{background:var(--secondary-hover);color:var(--secondary-hover-foreground)}
+.btn-danger{background:var(--destructive);color:var(--destructive-foreground)}
+.btn-outline{background:var(--card);color:var(--foreground);border-color:var(--border)}
+.btn-outline:hover{background:var(--subtle)}
+a.lnk{color:var(--link);font-weight:600}
+.inp{background:var(--input-bg);border:1px solid var(--input);color:var(--foreground);border-radius:8px;padding:10px 12px;font:inherit;width:240px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;color:var(--card-foreground)}
+.badge{display:inline-block;border-radius:999px;padding:3px 10px;font:700 .75rem system-ui}
+.bar{display:flex;align-items:center;gap:20px;padding:12px 16px;border-radius:12px;color:#E8E9DF}
+.bar .logo{width:32px;height:32px;border-radius:8px;background:#A9B887;color:#2E3D28;display:grid;place-items:center;font:900 .9rem Syne,system-ui}
+.bar a{color:#E8E9DF;text-decoration:none;font-weight:600;padding:6px 0;border-bottom:2px solid transparent}
+.bar a.on{border-bottom-color:#A9B887}
+.swipe{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.person{background:#E8E9DF;color:#111111;border-radius:20px;padding:20px;border:1px solid #CED1C5}
+.person h3{color:#2E3D28}
+.track{position:relative;height:48px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font:700 .8rem system-ui;color:#E8E9DF;margin-top:16px}
+.track span:last-child{color:#111111}
+.knob{position:absolute;left:50%;top:4px;width:40px;height:40px;border-radius:999px;background:#E8E9DF;color:#2E3D28;display:grid;place-items:center;font-weight:900;transform:translateX(-50%)}
+.toast{border-radius:10px;padding:12px 16px;font-weight:600;color:#E8E9DF}
+.sk{height:16px;border-radius:8px;margin:8px 0}
+.big404{font:800 6rem/1 Syne,system-ui;margin:0}
+.focusdemo:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+.fall{position:relative;height:120px;overflow:hidden}
+</style></head>
+<body><main>
+<h1>konnevo olive theme preview</h1>
+<p style="color:var(--muted-foreground)">Built from <code>src/app/globals.css</code>. Open in any browser. Resize to check phone width.</p>
+
+<h2>Swatches</h2><h3 class="lbl">Brand</h3><div class="sw"><div style="background:#E8E9DF;color:#111111"><b>Soft White</b><span>#E8E9DF</span></div><div style="background:#A9B887;color:#111111"><b>Sage Green</b><span>#A9B887</span></div><div style="background:#2E3D28;color:#E8E9DF"><b>Deep Olive</b><span>#2E3D28</span></div><div style="background:#111111;color:#E8E9DF"><b>Black (text only)</b><span>#111111</span></div></div><h3 class="lbl">Derived</h3><div class="sw"><div style="background:#F3F4EC;color:#111111"><b>Paper</b><span>#F3F4EC</span></div><div style="background:#D7E0C1;color:#111111"><b>Sage-200</b><span>#D7E0C1</span></div><div style="background:#6E8A4F;color:#111111"><b>Moss</b><span>#6E8A4F</span></div><div style="background:#4F6B3A;color:#E8E9DF"><b>Moss-dark</b><span>#4F6B3A</span></div><div style="background:#3C4F34;color:#E8E9DF"><b>Olive-700</b><span>#3C4F34</span></div><div style="background:#1F2A1B;color:#E8E9DF"><b>Olive-900</b><span>#1F2A1B</span></div><div style="background:#CED1C5;color:#111111"><b>Line on light</b><span>#CED1C5</span></div><div style="background:#D7DAD1;color:#111111"><b>Line on paper</b><span>#D7DAD1</span></div><div style="background:#485542;color:#E8E9DF"><b>Line on dark</b><span>#485542</span></div></div><h3 class="lbl">Status</h3><div class="sw"><div style="background:#A63A28;color:#E8E9DF"><b>Brick</b><span>#A63A28</span></div><div style="background:#B3442F;color:#E8E9DF"><b>Brick glow</b><span>#B3442F</span></div><div style="background:#F0D5CE;color:#111111"><b>Brick tint</b><span>#F0D5CE</span></div><div style="background:#7A2A1B;color:#E8E9DF"><b>Brick text</b><span>#7A2A1B</span></div><div style="background:#EBDDB0;color:#111111"><b>Amber tint</b><span>#EBDDB0</span></div><div style="background:#7A4E0E;color:#E8E9DF"><b>Amber text</b><span>#7A4E0E</span></div><div style="background:#D6D8C9;color:#111111"><b>Dismissed</b><span>#D6D8C9</span></div><div style="background:#4F6B3A;color:#E8E9DF"><b>Success</b><span>#4F6B3A</span></div></div><h3 class="lbl">Match / loading</h3><div class="sw"><div style="background:#8B9384;color:#111111"><b>Knob mid</b><span>#8B9384</span></div><div style="background:#DFE1D2;color:#111111"><b>Shimmer light A</b><span>#DFE1D2</span></div><div style="background:#EEF0E4;color:#111111"><b>Shimmer light B</b><span>#EEF0E4</span></div><div style="background:#3C4F34;color:#E8E9DF"><b>Shimmer dark A</b><span>#3C4F34</span></div><div style="background:#4A6040;color:#E8E9DF"><b>Shimmer dark B</b><span>#4A6040</span></div></div>
+
+<h2>Light aurora, grid, controls</h2>
+<div class="panel"><div class="aurora aurora-light"><span class="aurora-blob aurora-a"></span><span class="aurora-blob aurora-b"></span><span class="aurora-blob aurora-c"></span><span class="aurora-grid"></span></div>
+ <h3 style="font-size:1.6rem">Find events. <span class="text-gradient">Find your squad.</span></h3>
+ <p style="color:var(--muted-foreground);max-width:46ch">Body text is black or deep olive, secondary text is Olive-700 on a soft white page.</p>
+ <div class="row"><button class="btn btn-primary">Primary</button><button class="btn btn-secondary">Secondary</button><button class="btn btn-danger">Delete</button><button class="btn btn-outline">Outline</button><a class="lnk" href="#">A link</a><button class="btn btn-outline focusdemo" autofocus>Tab to see the focus ring</button></div>
+ <div class="row"><input class="inp" placeholder="Input on paper"><span class="badge" style="background:#D7E0C1;color:#2E3D28">Registered</span><span class="badge" style="background:#2E3D28;color:#E8E9DF">Attended</span><span class="badge" style="background:#EBDDB0;color:#7A4E0E">Waiting for club check</span></div>
+ <div class="row"><span class="badge" style="background:#F0D5CE;color:#7A2A1B">Report open</span><span class="badge" style="background:#EBDDB0;color:#7A4E0E">Reviewing</span><span class="badge" style="background:#D7E0C1;color:#2E3D28">Resolved</span><span class="badge" style="background:#D6D8C9;color:#2E3D28">Dismissed</span></div>
+ <div class="card hover-lift" style="max-width:340px;margin-top:12px"><b style="color:var(--heading)">Paper card with hover lift</b><p style="margin:6px 0 0;color:var(--muted-foreground)">1px line border, deep olive heading.</p></div>
+</div>
+
+<h2>Navbar and footer (deep olive)</h2>
+<div class="bar bar-dark theme-dark"><span class="logo">k</span><a class="on" href="#">Events</a><a href="#">My Teams</a><a href="#">Settings</a><span style="margin-left:auto"><button class="btn btn-primary">Log in</button></span></div>
+
+<h2>Dark aurora, slide to match</h2>
+<div class="panel theme-dark"><div class="aurora aurora-dark"><span class="aurora-blob aurora-a"></span><span class="aurora-blob aurora-b"></span><span class="aurora-blob aurora-c"></span><span class="aurora-grid"></span></div>
+ <h3 style="font-size:1.4rem">Slide to match</h3>
+ <div class="row"><button class="btn btn-primary">Primary on dark</button><a class="lnk" href="#">Link on dark</a><span class="badge" style="background:#7A2A1B;color:#F0D5CE">Danger soft</span></div>
+ <div class="swipe">
+  <div><div class="person glow-skip"><h3>Skip glow</h3><p>Brick #B3442F at 45%.</p></div></div>
+  <div><div class="person glow-match"><h3>Match glow</h3><p>Sage at 60%, moss edge.</p></div></div>
+ </div>
+ <div class="track knob-track"><span>✕ Skip</span><span class="knob glow-skip-knob">‹›</span><span>✓ Match</span></div>
+ <div class="row" style="margin-top:14px"><div style="flex:1;height:10px;border-radius:999px;background:#1F2A1B;border:1px solid #485542"><div class="bar-fill" style="width:64%;height:100%;border-radius:999px"></div></div><span style="font-size:.8rem">Progress / funnel bar</span></div>
+ <div class="fall" id="fall"></div>
+ <button class="btn btn-primary" id="burst">Replay confetti</button>
+</div>
+
+<h2>Skeletons, toasts, 404</h2>
+<div class="row" style="align-items:stretch;gap:16px">
+ <div class="card" style="flex:1;min-width:240px"><div class="sk skeleton shimmer-light" style="width:70%"></div><div class="sk skeleton shimmer-light"></div><div class="sk skeleton shimmer-light" style="width:45%"></div></div>
+ <div class="card theme-dark" style="flex:1;min-width:240px;background:#2E3D28"><div class="sk skeleton shimmer-dark" style="width:70%"></div><div class="sk skeleton shimmer-dark"></div><div class="sk skeleton shimmer-dark" style="width:45%"></div></div>
+</div>
+<div class="row"><div class="toast" style="background:#4F6B3A">Saved</div><div class="toast" style="background:#A63A28">Something went wrong</div><div class="toast" style="background:#2E3D28">Link copied</div></div>
+<p class="big404 text-gradient-404">404</p>
+
+<h2>Orbit core and tilt hover</h2>
+<div class="row"><div style="position:relative;width:160px;height:160px"><div class="orbit-core">k</div></div><div class="card tilt" style="width:260px"><b>Tilt card</b><div class="tilt-glare"></div><p style="margin:6px 0 0;color:var(--muted-foreground)">Hover me.</p></div></div>
+</main>
+<script>
+(function(){var C=["#A9B887","#E8E9DF","#6E8A4F","#D7E0C1","#F3F4EC"];var f=document.getElementById("fall");
+function go(){f.innerHTML="";for(var i=0;i<40;i++){var s=document.createElement("span");s.className="confetti";s.style.left=(Math.random()*100)+"%";s.style.background=C[i%C.length];s.style.setProperty("--dx",(Math.random()*120-60)+"px");s.style.animationDelay=(Math.random()*.4)+"s";f.appendChild(s)}}
+document.getElementById("burst").onclick=go;go();})();
+</script></body></html>

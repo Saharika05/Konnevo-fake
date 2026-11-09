@@ -1,0 +1,11 @@
+{
+  "name": "student-platform",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "start": "pnpm --filter web start",
+    "lint": "pnpm --filter web lint"
+  },
+  "packageManager": "pnpm@10.28.0"
+}
